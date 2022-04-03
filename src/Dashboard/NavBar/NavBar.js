@@ -1,11 +1,9 @@
 import React from "react";
-import { RiAddFill } from "react-icons/ri";
 import { IoCreateSharp } from "react-icons/io5";
 import { FaShare } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import CommonModal from "../Modal/CommonModal";
+import Dropdown from "./Dropdown";
 const NavBar = () => {
-  const [showModal, setShowModal] = React.useState(false);
   return (
     <nav className="py-4 border-b-2 border-[#C7C7C7]">
       <div className="flex px-3">
@@ -19,16 +17,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="font-poppins flex items-center justify-start space-x-3 basis-2/4">
-          <button
-            className="text-primary py-[6px] px-4 border border-primary rounded-full text-md font-semibold flex justify-between"
-            onClick={() => setShowModal(true)}
-          >
-            <span className="text-xl font-semibold px-2">
-              <RiAddFill />
-            </span>
-            Add
-          </button>
-          
+          <Dropdown />
           <button className="text-white py-[6px] px-4 bg-primary rounded-full text-md font-semibold flex justify-between shadow-xl">
             <span className="text-xl font-semibold px-2">
               <IoCreateSharp />
@@ -43,9 +32,6 @@ const NavBar = () => {
           </button>
         </div>
       </div>
-      {showModal && (
-        <CommonModal showModal={showModal} setShowModal={setShowModal} />
-      )}
     </nav>
   );
 };
