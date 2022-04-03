@@ -5,7 +5,13 @@
 @tailwind utilities;
 
 @layer components {
-  .menu-hover{
-      @apply  hover:bg-blue-50 border-l-[5px] border-transparent hover:border-primary hover:text-primary;
+  .menu-active {
+    @apply bg-blue-50 border-l-[5px] border-transparent border-primary text-primary;
+  }
+  .sidebar-container{
+    @apply duration-300 h-screen bg-gray-50 relative pt-5  border-r-2 border-[#C7C7C7];
+  }
+  .sidebar-link{
+    @apply flex items-center gap-x-4 p-2 px-4 cursor-pointer rounded-sm font-normal text-lg;
   }
 }

@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { RiFileCopy2Fill } from "react-icons/ri";
 import { MdContactMail, MdPerson } from "react-icons/md";
 import { FaVideo } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { BsArrowRightCircle, BsImages } from "react-icons/bs";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 const SideBar = () => {
   const [open, setOpen] = useState(true);
   const menus = [
@@ -30,11 +30,7 @@ const SideBar = () => {
   return (
     <>
       <div className="flex">
-        <div
-          className={`${
-            open ? "w-60" : "w-14"
-          } duration-300 h-screen bg-gray-50 relative pt-5  border-r-2 border-[#C7C7C7]`}
-        >
+        <div className={`${open ? "w-60" : "w-14"} sidebar-container`}>
           <span
             className={`cursor-pointer absolute top-9 w-7 text-black text-xl ${
               open ? "rotate-180 -right-2" : " -right-4"
@@ -53,12 +49,18 @@ const SideBar = () => {
           <div className="pt-4">
             <div>
               {menus.map((menu, index) => (
-                <Link
+                <NavLink
                   to={menu?.path}
                   key={index}
-                  className={`flex items-center text-fontColor gap-x-4 p-2 px-4 cursor-pointer menu-hover rounded-sm font-normal text-lg ${
-                    menu.border && "border-b-2 border-[#C7C7C7]"
-                  }`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? `sidebar-link text-primary menu-active ${
+                          menu.border && "border-b-2 border-b-[#C7C7C7]"
+                        }`
+                      : `sidebar-link text-fontColor ${
+                          menu.border && "border-b-2 border-[#C7C7C7]"
+                        }`
+                  }
                 >
                   <span className="">{menu.icon}</span>
                   <span
@@ -66,14 +68,12 @@ const SideBar = () => {
                   >
                     {menu.title}
                   </span>
-                </Link>
+                </NavLink>
               ))}
             </div>
           </div>
         </div>
-
         <div className="p-7 text-2xl font-semibold flex-1 h-screen">
-          <h1>My Products</h1>
           <Outlet />
         </div>
       </div>
