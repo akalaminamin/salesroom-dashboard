@@ -7,7 +7,6 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { RiFile4Line } from "react-icons/ri";
 import { BsArrowRightCircle, BsImages, BsCalendar4Range } from "react-icons/bs";
 import { Outlet, NavLink } from "react-router-dom";
-import Breadcrumb from "../Breadcrumb/Breadcrumb";
 const SideBar = () => {
   const [open, setOpen] = useState(true);
   const menus = [

@@ -1,6 +1,6 @@
 import React from "react";
 import Breadcrumb from "../../Breadcrumb/Breadcrumb";
-import TabsRender from "./Tabs/Tabs";
+import Tabs from "./Tabs/Tabs";
 const MyProducts = () => {
   return (
     <div>
@@ -10,7 +10,7 @@ const MyProducts = () => {
           <h2 className="text-3xl font-bold mb-1">My Products</h2>
           <h2 className="text-lg">3 Products</h2>
         </div>
-        <TabsRender />
+        <Tabs />
       </div>
     </div>
   );
