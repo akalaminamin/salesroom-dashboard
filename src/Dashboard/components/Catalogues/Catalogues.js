@@ -1,12 +1,15 @@
-
-
-
-import React from 'react'
+import React from "react";
+import Breadcrumb from "../../Breadcrumb/Breadcrumb";
 
 const Catalogues = () => {
   return (
-    <div>Catalogues</div>
-  )
-}
+    <>
+      <Breadcrumb />
+      <div className="p-6">
+        <h2>Catalogues</h2>
+      </div>
+    </>
+  );
+};
 
-export default Catalogues
+export default Catalogues;

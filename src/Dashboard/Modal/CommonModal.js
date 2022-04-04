@@ -1,6 +1,14 @@
 import React from "react";
-
+import Swal from "sweetalert2";
 export default function Modal({ showModal, setShowModal }) {
+  const handleDone = () => {
+    setShowModal(false);
+    Swal.fire({
+      title: "Category Created",
+      icon: "success",
+      timer: 2000,
+    });
+  };
   return (
     <>
       {showModal ? (
@@ -45,7 +53,7 @@ export default function Modal({ showModal, setShowModal }) {
                   <button
                     className="bg-primary text-white active:bg-primary font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    onClick={handleDone}
                   >
                     Done
                   </button>

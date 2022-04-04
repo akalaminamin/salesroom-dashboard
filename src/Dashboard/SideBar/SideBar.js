@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { RiFileCopy2Fill } from "react-icons/ri";
 import { MdContactMail, MdPerson } from "react-icons/md";
 import { FaVideo } from "react-icons/fa";
+import { BiEditAlt } from "react-icons/bi";
 import { IoSettingsSharp } from "react-icons/io5";
-import { BsArrowRightCircle, BsImages } from "react-icons/bs";
+import { RiFile4Line } from "react-icons/ri";
+import { BsArrowRightCircle, BsImages, BsCalendar4Range } from "react-icons/bs";
 import { Outlet, NavLink } from "react-router-dom";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 const SideBar = () => {
   const [open, setOpen] = useState(true);
   const menus = [
@@ -14,9 +17,17 @@ const SideBar = () => {
       path: "/dashboard/products",
     },
     { icon: <BsImages />, title: "Images", path: "/dashboard/images" },
-    { icon: <BsImages />, title: "Manuals", path: "/dashboard/manuals" },
-    { icon: <BsImages />, title: "CAD files", path: "/dashboard/cadFiles" },
-    { icon: <BsImages />, title: "Catalogues", path: "/dashboard/catalogues" },
+    {
+      icon: <BsCalendar4Range />,
+      title: "Manuals",
+      path: "/dashboard/manuals",
+    },
+    { icon: <BiEditAlt />, title: "CAD files", path: "/dashboard/cadFiles" },
+    {
+      icon: <RiFile4Line />,
+      title: "Catalogues",
+      path: "/dashboard/catalogues",
+    },
     { icon: <MdContactMail />, title: "Contact", path: "/dashboard/contact" },
     {
       icon: <FaVideo />,
@@ -73,7 +84,7 @@ const SideBar = () => {
             </div>
           </div>
         </div>
-        <div className="p-7 text-2xl font-semibold flex-1 h-screen">
+        <div className="text-2xl font-semibold flex-1 h-screen">
           <Outlet />
         </div>
       </div>

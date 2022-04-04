@@ -7,16 +7,16 @@ const NavBar = () => {
   return (
     <nav className="py-4 border-b-2 border-[#C7C7C7]">
       <div className="flex px-3">
-        <div className="basis-2/4">
+        <div className="basis-[40%]">
           <Link to="/dashboard">
             <img
-              className="w-44"
+              className="w-48"
               src={require("../../Assets/images/image/logo.png")}
               alt="logo"
             />
           </Link>
         </div>
-        <div className="font-poppins flex items-center justify-start space-x-3 basis-2/4">
+        <div className="font-poppins flex items-center justify-start space-x-3 basis-[60%]">
           <Dropdown />
           <button className="text-white py-[6px] px-4 bg-primary rounded-full text-md font-semibold flex justify-between shadow-xl">
             <span className="text-xl font-semibold px-2">
