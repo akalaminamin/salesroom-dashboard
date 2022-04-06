@@ -1,7 +1,6 @@
 import React from "react";
 import { RiAddFill } from "react-icons/ri";
-import CommonModal from "../Modal/CommonModal";
-
+import CommonModal from "../Common/CommonModal/CommonModal";
 const Dropdown = () => {
   const [showModal, setShowModal] = React.useState(false);
   const [showDropdown, setShowDropdown] = React.useState(false);

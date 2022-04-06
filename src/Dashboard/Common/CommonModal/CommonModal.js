@@ -6,6 +6,7 @@ export default function Modal({ showModal, setShowModal }) {
     Swal.fire({
       title: "Category Created",
       icon: "success",
+      showConfirmButton: false,
       timer: 2000,
     });
   };

@@ -40,6 +40,7 @@ function App() {
             />
             <Route path="Signup" element={<Signup />} />
             <Route path="dashboard" element={<Dashboard />}>
+              <Route index element={<MyProducts />} />
               <Route path="products" element={<MyProducts />} />
               <Route path="images" element={<Images />} />
               <Route path="manuals" element={<Manuals />} />
